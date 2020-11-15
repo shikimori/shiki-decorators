@@ -1,28 +1,73 @@
-### `@memoize` based on [andreypopp/memoize-decorator](https://github.com/andreypopp/memoize-decorator)
+### `@bind` uses [NoHomey/bind-decorator](https://github.com/NoHomey/bind-decorator)
+Binds method to the current context.
+
+```js
+import { bind } from 'shiki-decorators';
+
+class Example {
+  a = 'a from example'
+
+  @bind
+  foo() {
+    console.log(this.a);
+  }
+
+  boo() {
+    console.log(this.a);
+  }
+}
+
+const example = new Example();
+const z = { a: 'a from z' };
+z.foo = example.foo;
+z.boo = example.boo;
+
+z.foo();
+z.boo();
+
+// Output
+// a from example
+// a from z
+```
+
+
+### `@memoize` uses [andreypopp/memoize-decorator](https://github.com/andreypopp/memoize-decorator)
 A method/getter decorator which is when applied to a method or a getter
 memoizes the result of the first call and returns it on subsequent calls.
 
 ```js
+import { memoize } from 'shiki-decorators';
+
 class Example {
   @memoize
   foo() {
     console.log('heavy method computations');
-    return 1;
+    return 'foo';
   }
 
   @memoize
   get boo() {
     console.log('heavy getter computations');
-    return 2;
+    return 'boo';
   }
 }
 
 let example = new Example();
-example.foo(); // prints 'heavy method computations', returns 1
-example.foo(); // just returns 1
 
-example.boo; // prints 'heavy getter computations', returns 2
-example.boo; // just returns 1
+console.log(example.foo()); // prints '', and then prints "1"
+console.log(example.boo); // prints '', and then prints "1"
+
+console.log(example.foo()); // just prints '1'
+console.log(example.boo); // just prints '1'
+
+
+// Output
+// heavy method computations
+// foo
+// heavy getter computations
+// boo
+// foo
+// boo
 ```
 
 ### `@chain`
