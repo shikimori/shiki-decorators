@@ -1,9 +1,9 @@
 /* global describe, it */
 
 import { expect } from 'chai';
-import { debounce } from '..';
+import debounce from '../debounce';
 
-describe('debounce', () => {
+describe('@debounce', () => {
   it('should debounce when used as a simple decorator', next => {
     const c = {
       calls: 0,

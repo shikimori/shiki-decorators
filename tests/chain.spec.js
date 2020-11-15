@@ -1,9 +1,9 @@
 /* global describe, it */
 
 import { expect } from 'chai';
-import { chain } from '..';
+import chain from '../chain';
 
-describe('chain', () => {
+describe('@chain', () => {
   it('should chain calls as a simple decorator', () => {
     const c = {
       calls: 0,
