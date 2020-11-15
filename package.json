@@ -8,7 +8,7 @@
   "homepage": "https://github.com/shikimori/shiki-decorators",
   "scripts": {
     "lint": "eslint .",
-    "test": "mocha-webpack --webpack-config webpack.config.test.js tests/*.spec.js"
+    "test": "mocha-webpack --webpack-config webpack.config.test.js tests/*.js"
   },
   "repository": {
     "type": "git",
