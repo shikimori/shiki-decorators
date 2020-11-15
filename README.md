@@ -9,10 +9,10 @@
 
 ```js
 class Example {
-	@debounce(300)
-	foo() {
-		return this;
-	}
+  @debounce(300)
+  foo() {
+    return this;
+  }
 }
 
 let e = new Example();
