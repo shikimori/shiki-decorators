@@ -1,5 +1,5 @@
 ### `@chain`
-Allows method chaining. Each method returns a called object,
+Allows chaining execution of a function. Each method returns a called object,
 allowing the calls to be chained together in a single statement.
 
 ```js
