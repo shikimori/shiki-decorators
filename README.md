@@ -1,4 +1,7 @@
 ### `@chain`
+Allows method chaining. Each method returns a called object,
+allowing the calls to be chained together in a single statement.
+
 ```js
 import { chain from 'shiki-decorators';
 
@@ -19,6 +22,8 @@ e.foo(1).foo(2);
 
 
 ### `@throttle`
+Throttle execution of a function. Especially useful for rate limiting execution of handlers on events like resize and scroll.
+
 ```js
 import { throttle } from 'shiki-decorators';
 
@@ -46,6 +51,9 @@ setTimeout(() => {
 
 
 ### `@debounce`
+Debounce execution of a function. Debouncing, unlike throttling, guarantees that
+a function is only executed a single time, either at the very beginning of a
+series of calls, or at the very end.
 ```js
 import { debounce } from 'shiki-decorators';
 
