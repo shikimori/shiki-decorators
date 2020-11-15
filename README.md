@@ -26,7 +26,7 @@ setTimeout(() => {
 
 
 ### `@debounce`
-```
+```js
 import { debounce } from 'throttle-debounce';
 
 class Example {
