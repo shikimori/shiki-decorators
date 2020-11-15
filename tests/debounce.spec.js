@@ -17,7 +17,6 @@ describe('debounce()', () => {
       }
     };
 
-    expect(c).to.have.property('calls', 0);
     c.foo(1);
     expect(c).to.have.property('calls', 0);
     c.foo(2);
@@ -38,12 +37,11 @@ describe('debounce()', () => {
     });
     const m = { calls: 0, args: null };
 
-    expect(m).to.have.property('calls', 0);
     c(1);
     expect(m).to.have.property('calls', 0);
     c(2);
     c(3);
-    setTimeout( () => {
+    setTimeout(() => {
       expect(m).to.have.property('calls', 1);
       expect(m.args).to.deep.equal([3]);
       next();
@@ -51,10 +49,10 @@ describe('debounce()', () => {
   });
 
   it('should support passing a delay', next => {
-    let c = debounce(5, (...args) => {
-        m.calls.push(args);
-      }),
-      m = { calls:[] };
+    const c = debounce(5, (...args) => {
+      m.calls.push(args);
+    });
+    const m = { calls: [] };
 
     c(1);
     setTimeout(()=> c(2), 1);
