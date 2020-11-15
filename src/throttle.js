@@ -1,4 +1,12 @@
-export default function outerDecorator(duration) {
+export default function outerDecorator(duration, method) {
+  if (!duration || duration.constructor !== Number) {
+    throw 'throttle duration is not defiend';
+  }
+
+  if (method && method.constructor === Function) {
+    return throttle(duration, method);
+  }
+
   return function innerDecorator(target, key, descriptor) {
     // return {
     //   configurable: true,
@@ -15,17 +23,20 @@ export default function outerDecorator(duration) {
     //   }
     // };
 
-    descriptor.value = throttle(descriptor.value, duration);
+    descriptor.value = throttle(duration, descriptor.value);
     return descriptor;
   };
 }
 
 /** throttles the specified function and returns a wrapper function */
-export function throttle(method, duration) {
+export function throttle(duration, method) {
   let timeoutId;
   let execAfterTimeout = false;
+  let execArgs;
 
   function throttleWrapper(...args) {
+    execArgs = args;
+
     if (timeoutId) {
       execAfterTimeout = true;
       return;
@@ -37,13 +48,13 @@ export function throttle(method, duration) {
 
       if (execAfterTimeout) {
         execAfterTimeout = false;
-        method.apply(self, args);
+        method.apply(self, execArgs);
         timeoutId = setTimeout(delay, duration);
       }
     }
 
     timeoutId = setTimeout(delay, duration);
-    method.apply(this, args);
+    method.apply(this, execArgs);
   }
 
   return throttleWrapper;
