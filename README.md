@@ -60,7 +60,6 @@ console.log(example.boo); // prints '', and then prints "1"
 console.log(example.foo()); // just prints '1'
 console.log(example.boo); // just prints '1'
 
-
 // Output
 // heavy method computations
 // foo
@@ -85,8 +84,8 @@ class Example {
 }
 
 const example = new Example();
-
 example.foo(1).foo(2);
+
 // Output
 // num: 1
 // num: 2
@@ -119,6 +118,11 @@ setTimeout(() => {
 setTimeout(() => {
   example.foo(100); // Will execute the callback
 }, 1200);
+
+// Output
+// num: 1
+// num: 10
+// num: 100
 ```
 
 
