@@ -1,6 +1,26 @@
+### `@chain`
+```js
+import { chain from 'shiki-decorators';
+
+class Example {
+  @chain
+  foo(num) {
+    console.log('num:', num);
+  }
+}
+
+const e = new Example();
+
+e.foo(1).foo(2);
+// Output
+// num: 1
+// num: 2
+```
+
+
 ### `@throttle`
 ```js
-import { throttle } from '../../../shiki-decorators';
+import { throttle } from 'shiki-decorators';
 
 class Example {
   @throttle(1000)
@@ -27,7 +47,7 @@ setTimeout(() => {
 
 ### `@debounce`
 ```js
-import { debounce } from 'throttle-debounce';
+import { debounce } from 'shiki-decorators';
 
 class Example {
   @debounce(1000)
