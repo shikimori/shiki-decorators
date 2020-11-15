@@ -1,4 +1,12 @@
-export default function outerDecorator(duration) {
+export default function outerDecorator(duration, method) {
+  if (!duration || duration.constructor !== Number) {
+    throw 'debounce duration is not defiend';
+  }
+
+  if (method && method.constructor === Function) {
+    return debounce(duration, method);
+  }
+
   return function innerDecorator(target, key, descriptor) {
     // return {
     //   configurable: true,
@@ -15,13 +23,13 @@ export default function outerDecorator(duration) {
     //   }
     // };
 
-    descriptor.value = debounce(descriptor.value, duration);
+    descriptor.value = debounce(duration, descriptor.value);
     return descriptor;
   };
 }
 
 /** debounces the specified function and returns a wrapper function */
-export function debounce(method, duration) {
+export function debounce(duration, method) {
   let timeoutId;
 
   function debounceWrapper(...args) {
