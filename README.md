@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.com/shikimori/shiki-decorators.svg?branch=master)](https://travis-ci.com/shikimori/shiki-decorators)
+
+# shiki-decorators
+This repository contains set of useful es7 decorators: `bind`, `memoize`, `chain`, `throttle` and `debounce`.
+
 ### `@bind` uses [NoHomey/bind-decorator](https://github.com/NoHomey/bind-decorator)
 Binds method to the current context.
 
