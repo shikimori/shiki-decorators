@@ -1,22 +1,52 @@
-### `@debounce`
-
-> Throttle calls to the decorated function. To debounce means "call this at most once per N ms".
-> All outward function calls get collated into a single inward call, and only the latest (most recent) arguments as passed on to the debounced function.
->
-> ##### Options:
->
-> `delay` - _The number of milliseconds to buffer calls for._
-
+### `@throttle`
 ```js
+import { throttle } from '../../../shiki-decorators';
+
 class Example {
-  @debounce(300)
-  foo() {
-    return this;
+  @throttle(1000)
+  foo(num) {
+    console.log('num:', num);
   }
 }
 
-let e = new Example();
+const e = new Example();
 
-// this will only call foo() once:
-for (let i=1000; i--) e.foo();
+e.foo(1); // Will execute the callback
+e.foo(2); // Won’t execute callback
+e.foo(3); // Won’t execute callback
+
+setTimeout(() => {
+  e.foo(10); // Will execute the callback
+}, 900);
+
+setTimeout(() => {
+  e.foo(100); // Will execute the callback
+}, 1200);
+```
+
+
+### `@debounce`
+```
+import { debounce } from 'throttle-debounce';
+
+class Example {
+  @debounce(1000)
+  foo(num) {
+    console.log('num:', num);
+  }
+}
+
+const e = new Example();
+
+e.foo(1); // Won't execute callback
+e.foo(2); // Won’t execute callback
+e.foo(3); // Will execute the callback
+
+setTimeout(() => {
+  e.foo(10); // Will execute the callback
+}, 1200);
+
+// Output
+// num: 3
+// num: 10
 ```
