@@ -6,14 +6,14 @@
   "author": "morr",
   "license": "MIT",
   "homepage": "https://github.com/shikimori/shiki-decorators",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shikimori/shiki-decoratos.git"
+  },
   "scripts": {
     "lint": "eslint .",
     "test": "mocha-webpack --webpack-config webpack.config.test.js tests/*.js",
     "release": "release-it"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/shikimori/shiki-decoratos.git"
   },
   "dependencies": {
     "bind-decorator": "1.0.11",

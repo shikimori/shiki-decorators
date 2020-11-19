@@ -159,3 +159,10 @@ setTimeout(() => {
 // num: 3
 // num: 10
 ```
+
+
+####
+Package release command
+```sh
+GITHUB_TOKEN=... npm run release
+```
