@@ -8,6 +8,8 @@ Binds method to the current context.
 
 ```js
 import { bind } from 'shiki-decorators';
+// or to import with tree shaking use
+// import bind from 'shiki-decorators/src/bind';
 
 class Example {
   a = 'a from example'
@@ -42,6 +44,8 @@ memoizes the result of the first call and returns it on subsequent calls.
 
 ```js
 import { memoize } from 'shiki-decorators';
+// or to import with tree shaking use
+// import memoize from 'shiki-decorators/src/memoize';
 
 class Example {
   @memoize
@@ -80,6 +84,8 @@ allowing the calls to be chained together in a single statement.
 
 ```js
 import { chain } from 'shiki-decorators';
+// or to import with tree shaking use
+// import chain from 'shiki-decorators/src/chain';
 
 class Example {
   @chain
@@ -102,6 +108,8 @@ Throttle execution of a function. Especially useful for rate limiting execution 
 
 ```js
 import { throttle } from 'shiki-decorators';
+// or to import with tree shaking use
+// import throttle from 'shiki-decorators/src/throttle';
 
 class Example {
   @throttle(1000)
@@ -137,6 +145,8 @@ a function is only executed a single time, either at the very beginning of a
 series of calls, or at the very end.
 ```js
 import { debounce } from 'shiki-decorators';
+// or to import with tree shaking use
+// import debounce from 'shiki-decorators/src/debounce';
 
 class Example {
   @debounce(1000)

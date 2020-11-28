@@ -1,5 +1,5 @@
-export { default as bind } from './bind';
-export { default as chain } from './chain';
-export { default as debounce } from './debounce';
-export { default as memoize } from './memoize';
-export { default as throttle } from './throttle';
+export { default as bind } from './src/bind';
+export { default as chain } from './src/chain';
+export { default as debounce } from './src/debounce';
+export { default as memoize } from './src/memoize';
+export { default as throttle } from './src/throttle';
