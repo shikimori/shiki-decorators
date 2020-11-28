@@ -12,7 +12,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "test": "mocha-webpack --webpack-config webpack.config.test.js tests/*.js",
+    "test": "mocha-webpack --opts mocha-webpack.opts",
     "release": "release-it"
   },
   "dependencies": {
