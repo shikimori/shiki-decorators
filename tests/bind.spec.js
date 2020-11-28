@@ -1,7 +1,7 @@
 /* global describe, it */
 
 import { expect } from 'chai';
-import bind from '../bind';
+import bind from '../src/bind';
 
 describe('@bind', () => {
   it('should bind method to its context', () => {

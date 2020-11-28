@@ -1,7 +1,7 @@
 /* global describe, it */
 
 import { expect } from 'chai';
-import debounce from '../debounce';
+import debounce from '../src/debounce';
 
 describe('@debounce', () => {
   it('should debounce when used as a simple decorator', next => {

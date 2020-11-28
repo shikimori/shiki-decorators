@@ -1,7 +1,7 @@
 /* global describe, it */
 
 import { expect } from 'chai';
-import memoize from '../memoize';
+import memoize from '../src/memoize';
 
 describe('@memoize', () => {
   it('should memoize value as a simple decorator', () => {

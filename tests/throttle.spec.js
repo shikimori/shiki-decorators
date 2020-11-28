@@ -1,7 +1,7 @@
 /* global describe, it */
 
 import { expect } from 'chai';
-import throttle from '../throttle';
+import throttle from '../src/throttle';
 
 describe('@throttle', () => {
   it('should throttle when used as a simple decorator', next => {
