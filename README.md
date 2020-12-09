@@ -171,7 +171,7 @@ setTimeout(() => {
 ```
 
 
-####
+###
 Package release command
 ```sh
 GITHUB_TOKEN=... npm run release
